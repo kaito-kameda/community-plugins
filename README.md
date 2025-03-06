@@ -11,7 +11,7 @@ If you need to hoist plugins here, please get in touch by email to `research@gre
 
 | Method | Description |
 |------- | ----------- |
-| TBD | TBD |
+| [ConvertPowerToEnergy](docs/power-to-energy.md) | Converts power (in watts) to energy (in kWh) |
 
 # How to use
 
