@@ -2,6 +2,8 @@
 
 `rest-client` is a plugin for executing HTTP methods GET, PUT, and POST
 
+You provide some query parameters including `url`, `method`, and so on. `url` is URL for an online resource. `method` specifies the HTTP method. This plugin supports several authentication.
+
 
 ## Parameters
 
