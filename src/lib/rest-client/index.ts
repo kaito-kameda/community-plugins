@@ -23,6 +23,7 @@ export const RESTClient = PluginFactory({
       headers: z.record(z.string(), z.any()).optional(),
       'tls-verify': z.boolean().optional(),
       jpath: z.string(),
+      'observation-timestamp': z.boolean().optional(),
       output: z.string(),
     });
 
@@ -43,7 +44,8 @@ export const RESTClient = PluginFactory({
         if (
           errorMessage.startsWith('Unsupported method') ||
           errorMessage.startsWith('Only numerical output is supported.') ||
-          errorMessage.startsWith('The response data has no content.')
+          errorMessage.startsWith('The response data has no content.') ||
+          errorMessage.startsWith('timestamp has already existed in inputs.')
         ) {
           throw new Error(errorMessage);
         } else {
@@ -121,8 +123,33 @@ const processData = (
   inputs: PluginParams
 ) => {
   const data = response.data;
-  const {jpath, output} = config;
+  const {jpath} = config;
   const result = checkIfNumber(jsonpath.query(data, jpath));
+
+  return addTimestamp(config, inputs, result);
+};
+
+const addTimestamp = (
+  config: ConfigParams,
+  inputs: PluginParams,
+  result: any
+) => {
+  const {output} = config;
+  if (config['observation-timestamp']) {
+    if (inputs.some((item: any) => 'timestamp' in item)) {
+      throw new Error(
+        'timestamp has already existed in inputs. Please set observation-timestamp to false.'
+      );
+    } else {
+      const isotimestamp = new Date().toISOString();
+      const timestamp = isotimestamp.split('.')[0] + 'Z';
+      return inputs.map((input: any) => ({
+        timestamp: timestamp,
+        ...input,
+        [output]: result,
+      }));
+    }
+  }
 
   return inputs.map((input: any) => ({
     ...input,
