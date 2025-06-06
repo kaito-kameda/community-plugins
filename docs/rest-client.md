@@ -8,7 +8,7 @@ You provide some query parameters including `url`, `method`, and so on. `url` is
 
 ### Plugin config
 
-The parameters are required in config: `method`, `url`, `data`, `headers`, `http-basic-authentication`, `tls-verify`, `jpath` and `output`.
+The parameters are required in config: `method`, `url`, `data`, `headers`, `http-basic-authentication`, `tls-verify`, `jpath`, `observe-mode` and `output`.
 
 
 - `method`: HTTP method, you can choose `GET`, `PUT`, and `POST`
@@ -31,6 +31,7 @@ The parameters are required in config: `method`, `url`, `data`, `headers`, `http
     ```
 - `tls-verify`: optional, the server certificate is verified against the list of supplied CAs if true or undefined. `true` is set by default.
 - `jpath`: JSONPath expression and you can use it when using the GET method
+- `observe-mode`: optional, the execution timestamp will be automatically inserted into the `inputs` when using this plugin with `observe` if `true`. `false` is set by default. This option should not be set to `true` when used with `compute`. An error will occur if this option is set to `true` while a `timestamp` already exists in the `inputs`.
 - `output`: parameter name to store the result of this plugin
 
 ### Inputs
@@ -119,16 +120,16 @@ initialize:
         data: 
           wattage: 100
         output: result
+        observe-mode: true
         jpath: data
 tree:
   children:
     child:
       pipeline:
-        compute:
+        observe:
           - wattage-in-post-request
       inputs:
-        - timestamp: 2023-07-06T00:00 
-          duration: 100
+        - duration: 100
 ```
 You can set `community-plugins` to `path` insted of `https://github.com/Green-Software-Foundation/community-plugins`. 
 You can run this example as following when you save it to `./examples/manifests/rest-client.yml`:
@@ -156,6 +157,7 @@ The required parameters are:
 - `http-basic-authentication` : this must be a string
 - `tls-verify`: this must be a booleam
 - `jpath`: this must be a string
+- `observe-mode`: this must be a booleam
 - `output`: this must be a string
 
 You can fix this error by checking you are providing valid values for each parameter in the config.

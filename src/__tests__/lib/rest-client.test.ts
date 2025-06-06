@@ -55,13 +55,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -90,13 +90,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -125,13 +125,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -161,13 +161,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -199,13 +199,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -238,13 +238,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -277,13 +277,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -316,13 +316,13 @@ describe('rest-client', () => {
         });
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -358,13 +358,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -401,13 +401,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             result: 100,
           },
@@ -433,13 +433,13 @@ describe('rest-client', () => {
 
         const result = await restClient.execute([
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ]);
         const expectedResult = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
             wattage: 100,
           },
@@ -461,7 +461,7 @@ describe('rest-client', () => {
         const restClient = RESTClient(config, parametersMetadata, {});
         const input = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ];
@@ -483,7 +483,7 @@ describe('rest-client', () => {
         const restClient = RESTClient();
         const input = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ];
@@ -511,7 +511,7 @@ describe('rest-client', () => {
         const restClient = RESTClient(config, parametersMetadata, {});
         const input = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ];
@@ -538,7 +538,7 @@ describe('rest-client', () => {
         const restClient = RESTClient(config, parametersMetadata, {});
         const input = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ];
@@ -567,7 +567,7 @@ describe('rest-client', () => {
         const restClient = RESTClient(config, parametersMetadata, {});
         const input = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ];
@@ -596,7 +596,7 @@ describe('rest-client', () => {
         const restClient = RESTClient(config, parametersMetadata, {});
         const input = [
           {
-            timestamp: '2024-03-01',
+            timestamp: '2021-01-01T00:00:00Z',
             duration: 3600,
           },
         ];
@@ -606,6 +606,112 @@ describe('rest-client', () => {
         } catch (error) {
           if (error instanceof Error) {
             expect(error.message).toEqual('The response data has no content.');
+          }
+        }
+      });
+
+      it('successfully applies RESTCLient to given input. (observe-mode is false)', async () => {
+        expect.assertions(3);
+        const config = {
+          method: 'GET',
+          url: 'https://api.example.com/data',
+          'tls-verify': false,
+          jpath: '$.data',
+          output: 'result',
+          'observe-mode': false,
+        };
+
+        const restClient = RESTClient(config, parametersMetadata, {});
+        mock.onGet(config.url).reply(config => {
+          const headers = config.headers ?? {};
+          expect(config.httpsAgent.options.rejectUnauthorized).toBe(false);
+          expect(headers['Content-Type']).toBeUndefined();
+          return [200, {data: 100}];
+        });
+
+        const result = await restClient.execute([
+          {
+            timestamp: '2021-01-01T00:00:00Z',
+            duration: 3600,
+          },
+        ]);
+        const expectedResult = [
+          {
+            timestamp: '2021-01-01T00:00:00Z',
+            duration: 3600,
+            result: 100,
+          },
+        ];
+
+        expect(result).toStrictEqual(expectedResult);
+      });
+
+      it('successfully applies RESTClient to given input. (observe-mode is true)', async () => {
+        expect.assertions(3);
+
+        const fixedDate = new Date('2021-01-01T00:00:00Z');
+        jest.useFakeTimers().setSystemTime(fixedDate);
+
+        const config = {
+          method: 'GET',
+          url: 'https://api.example.com/data',
+          jpath: '$.data',
+          'observe-mode': true,
+          output: 'result',
+        };
+
+        const restClient = RESTClient(config, parametersMetadata, {});
+        mock.onGet(config.url).reply(config => {
+          const headers = config.headers ?? {};
+          expect(config.httpsAgent.options.rejectUnauthorized).toBe(true);
+          expect(headers['Content-Type']).toBeUndefined();
+          return [200, {data: 100}];
+        });
+
+        const result = await restClient.execute([
+          {
+            duration: 3600,
+          },
+        ]);
+        const expectedResult = [
+          {
+            timestamp: '2021-01-01T00:00:00Z',
+            duration: 3600,
+            result: 100,
+          },
+        ];
+
+        expect(result).toStrictEqual(expectedResult);
+
+        jest.useRealTimers();
+      });
+
+      it('rejects with timestamp already exists in input error.', async () => {
+        expect.assertions(1);
+        const config = {
+          method: 'GET',
+          url: 'https://api.example.com/data',
+          jpath: '$.data',
+          output: 'result',
+          'observe-mode': true,
+        };
+        mock.onGet(config.url).reply(200, {data: 100});
+
+        const restClient = RESTClient(config, parametersMetadata, {});
+        const input = [
+          {
+            timestamp: '2021-01-01T00:00:00Z',
+            duration: 3600,
+          },
+        ];
+
+        try {
+          await restClient.execute(input);
+        } catch (error) {
+          if (error instanceof Error) {
+            expect(error.message).toEqual(
+              'timestamp has already existed in inputs. Please set observe-mode to false.'
+            );
           }
         }
       });
