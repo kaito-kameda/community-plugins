@@ -610,7 +610,7 @@ describe('rest-client', () => {
         }
       });
 
-      it('successfully applies RESTCLient to given input. (observation-timestamp is false)', async () => {
+      it('successfully applies RESTCLient to given input. (observe-mode is false)', async () => {
         expect.assertions(3);
         const config = {
           method: 'GET',
@@ -618,7 +618,7 @@ describe('rest-client', () => {
           'tls-verify': false,
           jpath: '$.data',
           output: 'result',
-          'observation-timestamp': false,
+          'observe-mode': false,
         };
 
         const restClient = RESTClient(config, parametersMetadata, {});
@@ -646,7 +646,7 @@ describe('rest-client', () => {
         expect(result).toStrictEqual(expectedResult);
       });
 
-      it('successfully applies RESTClient to given input. (observation-timestamp is true)', async () => {
+      it('successfully applies RESTClient to given input. (observe-mode is true)', async () => {
         expect.assertions(3);
 
         const fixedDate = new Date('2021-01-01T00:00:00Z');
@@ -656,7 +656,7 @@ describe('rest-client', () => {
           method: 'GET',
           url: 'https://api.example.com/data',
           jpath: '$.data',
-          'observation-timestamp': true,
+          'observe-mode': true,
           output: 'result',
         };
 
@@ -693,7 +693,7 @@ describe('rest-client', () => {
           url: 'https://api.example.com/data',
           jpath: '$.data',
           output: 'result',
-          'observation-timestamp': true,
+          'observe-mode': true,
         };
         mock.onGet(config.url).reply(200, {data: 100});
 
@@ -710,7 +710,7 @@ describe('rest-client', () => {
         } catch (error) {
           if (error instanceof Error) {
             expect(error.message).toEqual(
-              'timestamp has already existed in inputs. Please set observation-timestamp to false.'
+              'timestamp has already existed in inputs. Please set observe-mode to false.'
             );
           }
         }

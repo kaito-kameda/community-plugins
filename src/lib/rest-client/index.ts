@@ -23,7 +23,7 @@ export const RESTClient = PluginFactory({
       headers: z.record(z.string(), z.any()).optional(),
       'tls-verify': z.boolean().optional(),
       jpath: z.string(),
-      'observation-timestamp': z.boolean().optional(),
+      'observe-mode': z.boolean().optional(),
       output: z.string(),
     });
 
@@ -135,10 +135,10 @@ const addTimestamp = (
   result: any
 ) => {
   const {output} = config;
-  if (config['observation-timestamp']) {
+  if (config['observe-mode']) {
     if (inputs.some((item: any) => 'timestamp' in item)) {
       throw new Error(
-        'timestamp has already existed in inputs. Please set observation-timestamp to false.'
+        'timestamp has already existed in inputs. Please set observe-mode to false.'
       );
     } else {
       const isotimestamp = new Date().toISOString();
